@@ -18,8 +18,10 @@ inclusion rules.
 You can install the development version of `selectools` from [GitHub](https://github.com/) with:
 
 ``` r
-# install.packages("pak")
-pak::pak("LucasDLalande/selectools")
+install.packages("remotes")
+remotes::install_url(
+  "https://github.com/LucasDLalande/selectools/archive/refs/heads/master.zip"
+)
 ```
 
 ## Usage
