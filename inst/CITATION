@@ -1,3 +1,4 @@
+citHeader("To cite selectools in publications, please use:")
 bibentry(
   bibtype  = "Manual",
   title    = "selectools: A facilitating model selection procedure",

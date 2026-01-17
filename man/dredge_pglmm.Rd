@@ -19,7 +19,7 @@ dredge_pglmm(
 \arguments{
 \item{formulaRE}{A character string specifying the random effects structure (e.g., "~ 1 + (1 | Species)"). Must include an intercept (`1`) as fixed effect.}
 
-\item{fixed}{A character vector of fixed effects to test. Interaction terms are allowed (e.g., "Sepal.Width:Petal.Length"), but some post-processing of tested models might be required.}
+\item{fixed}{A character vector of fixed-effect names to test. Interaction terms are allowed (e.g., "Sepal.Width:Petal.Length"), but some post-processing of tested models might be required.}
 
 \item{data}{A data.frame containing the variables named in formula.}
 
@@ -31,9 +31,9 @@ dredge_pglmm(
 
 \item{estimate}{Logical. If `TRUE` (default), includes fixed effect estimates in the output.}
 
-\item{std.err}{Logical. If `TRUE`, includes standard errors for the fixed effects. Default is `FALSE`.}
+\item{std.err}{Logical. If `TRUE`, includes standard errors for the fixed effects. Default to `FALSE`.}
 
-\item{round}{Integer. Number of decimal places to round numeric results to. Default is `3`.}
+\item{round}{Integer. Number of decimal places to round numeric results to. Default to `3`.}
 }
 \value{
 A data frame summarizing model selection results, ranked by the chosen criterion.
@@ -46,11 +46,12 @@ function from \code{MuMIn} with combinations (subsets) of fixed effect terms in
 the global model, with optional model inclusion rules.
 }
 \examples{
-
+# Write the null model using pglmm() from 'phyr'
 mod1 <- phyr::pglmm(log_onset ~ 1 + (1|Species__),
                   data = senescence, family = "gaussian", cov_ranef = list(Species = tree_ultra),
                   REML = TRUE, verbose = FALSE, s2.init = .1)
 
+# Run model selection based
 dredge_pglmm(
        formulaRE = "log_onset ~ 1 + (1 | Species)",
        fixed = c("log_afr", "log_mass"),

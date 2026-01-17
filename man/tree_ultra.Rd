@@ -9,7 +9,7 @@ An object of class \code{phylo}, with 33 tips and branch lengths in
 millions of years.
 }
 \source{
-TimeTree database (\url{http://www.timetree.org})
+TimeTree database (\url{https://www.timetree.org})
 }
 \usage{
 tree_ultra
@@ -21,7 +21,7 @@ C, etc.) for illustrative purpose. This tree can be used for examples
 involving phylogenetic models, such as `pglmm`.
 }
 \details{
-The tree was originally generated from  the TimeTree database and
+The tree was originally generated from the TimeTree database and
 then made ultrametric using the \code{force.ultrametric()} function from the
 \code{phytools} package. Species names were replaced by generic labels to
 match those in the \code{senescence} dataset.

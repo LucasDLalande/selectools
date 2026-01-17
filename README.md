@@ -2,6 +2,7 @@
 # selectools
 
 <!-- badges: start -->
+[![R-CMD-check](https://github.com/LucasDLalande/selectools/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/LucasDLalande/selectools/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 The goal of `selectools` is to provide and facilitate model selection procedures, 

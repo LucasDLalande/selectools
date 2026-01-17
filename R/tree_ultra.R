@@ -7,10 +7,10 @@
 #'
 #' @format An object of class \code{phylo}, with 33 tips and branch lengths in
 #' millions of years.
-#' @details The tree was originally generated from  the TimeTree database and
+#' @details The tree was originally generated from the TimeTree database and
 #' then made ultrametric using the \code{force.ultrametric()} function from the
 #' \code{phytools} package. Species names were replaced by generic labels to
 #' match those in the \code{senescence} dataset.
 #'
-#' @source TimeTree database (\url{http://www.timetree.org})
+#' @source TimeTree database (\url{https://www.timetree.org})
 "tree_ultra"

@@ -1,7 +1,7 @@
 Package: selectools
 Type: Package
 Title: A facilitating model selection procedure
-Version: 0.1.0
+Version: 0.2.0
 Authors@R: person(
       c("Lucas", "D."), "Lalande",
       email = "lalande.luke@gmail.com",
@@ -28,11 +28,14 @@ BugReports: https://github.com/LucasDLalande/selectools/issues
 Imports: 
     lme4,
     phyr,
-    stringr
+    stats,
+    utils
 Suggests: 
-    ape, 
+    ape,
     phylobase,
-    phytools
-RoxygenNote: 7.3.2
+    phytools,
+    testthat (>= 3.0.0)
+RoxygenNote: 7.3.3
 Depends: 
     R (>= 3.5)
+Config/testthat/edition: 3
