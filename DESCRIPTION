@@ -1,7 +1,7 @@
 Package: selectools
 Type: Package
 Title: A facilitating model selection procedure
-Version: 0.2.0
+Version: 0.2.1
 Authors@R: person(
       c("Lucas", "D."), "Lalande",
       email = "lalande.luke@gmail.com",

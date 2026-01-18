@@ -1,13 +1,13 @@
-# selectools 0.2.0 - 2026-01-17
+# selectools 0.2.1 - 2026-01-18
 
 ### Added
-Tests of internal and API functions have been implemented.
+None
 
 ### Changed
-The `dredge_pglmm()` function has been factorised using internal helper functions.
+None
 
 ### Fixed
-None
+Metadata update for Zenodo release (no code changes)
 
 ### Deprecated
 None
