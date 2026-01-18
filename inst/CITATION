@@ -10,5 +10,6 @@ bibentry(
     ),
   year     = 2026,
   note     = "R package version 0.2.1",
+  doi      = "https://doi.org/10.5281/zenodo.18289846"
   url      = "https://github.com/LucasDLalande/selectools.git"
 )
