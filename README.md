@@ -92,5 +92,10 @@ constant, linear, quadratic or threshold trajectories.
 
 To cite the `selectools` package in your publications, please use:
 
-  Lalande LD (2026). _selectools: A facilitating model selection procedure_. R package version 0.2.0, 
-  <https://github.com/LucasDLalande/selectools.git>.
+**selectools v0.2.1**
+
+  Lalande LD (2026). _selectools: A facilitating model selection procedure_. R package version 0.2.1. 
+  <https://doi.org/10.5281/zenodo.18289846>.
+  
+**For the canonical citation of the software project, use the concept DOI:**
+<https://doi.org/10.5281/zenodo.18289845>

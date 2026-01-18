@@ -8,7 +8,7 @@ bibentry(
       role = c("aut", "cre"),
       comment = c("0000-0001-9319-8033")
     ),
-  year     = 2025,
-  note     = "R package version 0.1.0",
+  year     = 2026,
+  note     = "R package version 0.2.1",
   url      = "https://github.com/LucasDLalande/selectools.git"
 )
