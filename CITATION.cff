@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "To cite selectools in publications, please use:"
+authors:
+  - family-names: Lalande
+    given-names: Lucas D.
+    orcid: https://orcid.org/0000-0001-9319-8033
+title: "selectools: A facilitating model selection procedure"
+version: 0.2.1
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.18289846
+date-released: 2026-01-18
