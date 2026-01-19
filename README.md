@@ -99,3 +99,6 @@ To cite the `selectools` package in your publications, please use:
   
 **For the canonical citation of the software project, use the concept DOI:**
 <https://doi.org/10.5281/zenodo.18289845>
+
+This package has been cited in:
+Cambreling S, Ronget V, Remot F, Gaillard J-M, Lemaître J-F. **(2025)**. Male reproductive senescence in mammals is pervasive and aligned with the slow-fast continuum. *Ecology Letters*. **28**, e70194. <https://doi.org/10.1111/ele.70194>
