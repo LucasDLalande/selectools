@@ -47,6 +47,9 @@
 #' @export
 #'
 #' @examples
+#' # These examples are wrapped in \donttest{} because fitting models on the simulated
+#' # data can produce platform-specific numerical errors (macOS ARM64).
+#' \donttest{
 #' formulas <- trajectory_formulas(formula = log_onset ~ log_mass + (1|Species),
 #'                                 trajectory_trait = "log_afr", interactions = "log_mass",
 #'                                 data = senescence,
@@ -68,6 +71,7 @@
 #'                            rank = "AICc",
 #'                            delta_criterion = 2,
 #'                            data = senescence)
+#' }
 dredge_trajectories <- function(models, trajectory_trait, rank = c("AIC", "AICc"), delta_criterion = 2, data) {
 
   # ---- data ----
@@ -254,6 +258,9 @@ dredge_trajectories <- function(models, trajectory_trait, rank = c("AIC", "AICc"
 #'    }
 #'
 #' @examples
+#' # These examples are wrapped in \donttest{} because fitting models on the simulated
+#' # data can produce platform-specific numerical errors (macOS ARM64).
+#' \donttest{
 #' formulas <- trajectory_formulas(formula = log_onset ~ log_mass + (1|Species),
 #'                                 trajectory_trait = "log_afr", interactions = "log_mass",
 #'                                 data = senescence,
@@ -280,6 +287,7 @@ dredge_trajectories <- function(models, trajectory_trait, rank = c("AIC", "AICc"
 #' res <- best_trajectory(dredge_results,
 #'                        delta_criterion = 2,
 #'                        adjust_threshold = TRUE)
+#' }
 best_trajectory <- function(dredge_results, delta_criterion, adjust_threshold = TRUE) {
 
   # ---- dredge_results ----

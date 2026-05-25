@@ -44,7 +44,7 @@ From a base formula, automatically build formulas for all desired trajectories a
 constant, linear, quadratic, factor and threshold trajectories (see below and note 
 that slopes or curvatures can be of any sign).
 
-<img src="man/figures/trajectories.png" width="60%" />
+<img src="man/figures/trajectories.png" width="100%" />
 
 Define your formula structure (`formula`), excluding the trait for which different 
 trajectories should be tested (`trajectory_trait`). Define terms interacting with 
@@ -460,14 +460,14 @@ To cite the `selectools` package in your publications, please use:
 
 **selectools v0.3.0**
 
-  Lalande LD (2026). _selectools: A facilitating model selection procedure_. R package version 0.3.0. 
-  *waiting for latest version doi*.
+> Lalande LD (2026). _selectools: A facilitating model selection procedure_. 
+R package version 0.3.0. *waiting for latest version doi*.
   
 **For the canonical citation of the software project, use the concept DOI:**
-<https://doi.org/10.5281/zenodo.18289845>
+> <https://doi.org/10.5281/zenodo.18289845>
 
 ### This package has been cited in:
 
-Cambreling S., Ronget V., Remot F., Gaillard J.-M., Lemaître J.-F. (2025). 
+> Cambreling S., Ronget V., Remot F., Gaillard J.-M., Lemaître J.-F. (2025). 
 Male reproductive senescence in mammals is pervasive and aligned with the slow-fast continuum. 
 *Ecology Letters*. 28, e70194. [10.1111/ele.70194](https://doi.org/10.1111/ele.70194)

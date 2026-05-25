@@ -56,6 +56,9 @@
 #' @export
 #'
 #' @examples
+#' # These examples are wrapped in \donttest{} because fitting models on the simulated
+#' # data can produce platform-specific numerical errors (macOS ARM64).
+#' \donttest{
 #' res <- select_trajectory(formula = log_onset ~ log_mass + (1|Species),
 #'                          trajectory_trait = "log_afr",
 #'                          interactions = "log_mass",
@@ -74,6 +77,7 @@
 #' # display summary (summaries) of retained trajectory (trajectories)
 #' summary(res) # type = "global" by default
 #' summary(res, type = "by_trajectory")
+#' }
 select_trajectory <- function(formula,
                               trajectory_trait,
                               interactions = NULL,

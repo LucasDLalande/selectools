@@ -247,6 +247,9 @@
 #' 357, 114595. \doi{10.1016/j.ygcen.2024.114595}
 #'
 #' @examples
+#' # These examples are wrapped in \donttest{} because fitting models on the simulated
+#' # data can produce platform-specific numerical errors (macOS ARM64).
+#' \donttest{
 #' # Provide an object resulting from trajectory_formulas() and containing threshold formulas
 #' formulas <- trajectory_formulas(formula = log_onset ~ log_mass + (1|Species),
 #'                                 trajectory_trait = "log_afr", interactions = "log_mass",
@@ -271,6 +274,7 @@
 #' estimate_threshold(data = senescence, threshold_formulas = formulas,
 #'                    trajectory_trait = "log_afr", start = -0.5, end = 5.7, iter = 0.1,
 #'                    rank = "AICc")
+#' }
 estimate_threshold <- function(data,
                                threshold_formulas,
                                trajectory_trait,

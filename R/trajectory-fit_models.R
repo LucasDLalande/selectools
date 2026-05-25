@@ -240,6 +240,9 @@
 #' @export
 #'
 #' @examples
+#' # These examples are wrapped in \donttest{} because fitting models on the simulated
+#' # data can produce platform-specific numerical errors (macOS ARM64).
+#' \donttest{
 #' formulas <- trajectory_formulas(formula = log_onset ~ log_mass + (1|Species),
 #'                                 trajectory_trait = "log_afr", interactions = "log_mass",
 #'                                 data = senescence,
@@ -273,6 +276,7 @@
 #'                   trajectory_trait = "log_afr",
 #'                   data = senescence,
 #'                   best_thresholds = estimation)
+#' }
 fit_models <- function(formulas, trajectory_trait, data, best_thresholds = NULL, lmer_control = NULL) {
 
   # ---- data ----
