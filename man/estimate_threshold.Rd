@@ -63,6 +63,9 @@ Threshold estimations are performed following methods used in Douhard et al. (20
 Briga et al. (2019), or Lalande et al. (2024).
 }
 \examples{
+# These examples are wrapped in \donttest{} because fitting models on the simulated
+# data can produce platform-specific numerical errors (macOS ARM64).
+\donttest{
 # Provide an object resulting from trajectory_formulas() and containing threshold formulas
 formulas <- trajectory_formulas(formula = log_onset ~ log_mass + (1|Species),
                                 trajectory_trait = "log_afr", interactions = "log_mass",
@@ -87,6 +90,7 @@ formulas <- list(
 estimate_threshold(data = senescence, threshold_formulas = formulas,
                    trajectory_trait = "log_afr", start = -0.5, end = 5.7, iter = 0.1,
                    rank = "AICc")
+}
 }
 \references{
 Briga, M., Jimeno, B. & Verhulst, S. (2019). Coupling lifespan and aging? The

@@ -85,6 +85,9 @@ This function is a wrapper of \code{\link{trajectory_formulas}}, \code{\link{est
 Please refer to the help page of the functions above for details.
 }
 \examples{
+# These examples are wrapped in \donttest{} because fitting models on the simulated
+# data can produce platform-specific numerical errors (macOS ARM64).
+\donttest{
 res <- select_trajectory(formula = log_onset ~ log_mass + (1|Species),
                          trajectory_trait = "log_afr",
                          interactions = "log_mass",
@@ -103,4 +106,5 @@ print(res, type = "by_trajectory")
 # display summary (summaries) of retained trajectory (trajectories)
 summary(res) # type = "global" by default
 summary(res, type = "by_trajectory")
+}
 }

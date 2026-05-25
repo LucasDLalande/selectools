@@ -41,6 +41,9 @@ to the final df and criterion value to account for the cost of the implicit
 parameter that is the threshold.
 }
 \examples{
+# These examples are wrapped in \donttest{} because fitting models on the simulated
+# data can produce platform-specific numerical errors (macOS ARM64).
+\donttest{
 formulas <- trajectory_formulas(formula = log_onset ~ log_mass + (1|Species),
                                 trajectory_trait = "log_afr", interactions = "log_mass",
                                 data = senescence,
@@ -67,4 +70,5 @@ dredge_results <- dredge_trajectories(models = fit,
 res <- best_trajectory(dredge_results,
                        delta_criterion = 2,
                        adjust_threshold = TRUE)
+}
 }

@@ -53,6 +53,9 @@ Models are fitted as linear model \code{\link[stats]{lm}} or linear mixed models
 using \code{\link[lme4]{lmer}} depending on whether random effects are absent or present, respectively.
 }
 \examples{
+# These examples are wrapped in \donttest{} because fitting models on the simulated
+# data can produce platform-specific numerical errors (macOS ARM64).
+\donttest{
 formulas <- trajectory_formulas(formula = log_onset ~ log_mass + (1|Species),
                                 trajectory_trait = "log_afr", interactions = "log_mass",
                                 data = senescence,
@@ -86,4 +89,5 @@ res <- fit_models(formulas = formulas,
                   trajectory_trait = "log_afr",
                   data = senescence,
                   best_thresholds = estimation)
+}
 }

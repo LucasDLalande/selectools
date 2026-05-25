@@ -63,6 +63,9 @@ Note: Some convergence warnings may appear during model dredging and do not
 necessarily indicate model misspecification.
 }
 \examples{
+# These examples are wrapped in \donttest{} because fitting models on the simulated
+# data can produce platform-specific numerical errors (macOS ARM64).
+\donttest{
 formulas <- trajectory_formulas(formula = log_onset ~ log_mass + (1|Species),
                                 trajectory_trait = "log_afr", interactions = "log_mass",
                                 data = senescence,
@@ -84,4 +87,5 @@ res <- dredge_trajectories(models = fit,
                            rank = "AICc",
                            delta_criterion = 2,
                            data = senescence)
+}
 }
