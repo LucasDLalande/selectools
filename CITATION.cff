@@ -5,8 +5,8 @@ authors:
     given-names: Lucas D.
     orcid: https://orcid.org/0000-0001-9319-8033
 title: "selectools: A facilitating model selection procedure"
-version: 0.2.1
+version: 0.3.0
 identifiers:
   - type: doi
-    value: 10.5281/zenodo.18289846
-date-released: 2026-01-18
+    value: 10.5281/zenodo.20378446
+date-released: 2026-05-25

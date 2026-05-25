@@ -35,10 +35,10 @@ remotes::install_url(
 ```
 
 ## Usage
-### Trajectory analysis pipeline
+### I. Trajectory analysis pipeline
 The package contains a full pipeline for trajectory analyses.
 
-##### 1) Build formulas for selected trajectories: `trajectory_formulas()`
+#### 1) Build formulas for selected trajectories: `trajectory_formulas()`
 
 From a base formula, automatically build formulas for all desired trajectories among 
 constant, linear, quadratic, factor and threshold trajectories (see below and note 
@@ -69,7 +69,7 @@ print(x, ...)
 It returns an object of class `trajectory.formulas` containing all trajectory 
 formulas selected.
 
-##### 2) Estimate threshold point for threshold trajectories: `estimate_threshold()`
+#### 2) Estimate threshold point for threshold trajectories: `estimate_threshold()`
 
 Based on threshold trajectory formulas, estimate the best threshold point according 
 to AIC or AICc value (`rank`) as described in Briga et al. (2019), Douhard et al. (2017) 
@@ -124,7 +124,7 @@ References
  lymphocyte count senescence in roe deer. *General and Comparative Endocrinology*,
  357, 114595. [10.1016/j.ygcen.2024.114595](https://doi.org/10.1016/j.ygcen.2024.114595)
 
-##### 3) Fit models: `fit_models()`
+#### 3) Fit models: `fit_models()`
 
 Fits `lme4::lmer()` or `stats::lm()` models for all trajectories, accounting for threshold 
 estimations obtained by `estimate_threshold()`.
@@ -150,7 +150,7 @@ Returns a `models` object containing all trajectory model fits and an attached
 environment with threshold datasets (*i.e.* copies of `data` with `trajectory_trait` 
 recalculated according to threshold points).
 
-##### 4) Apply dredge method on fitted models: `dredge_trajectories()`
+#### 4) Apply dredge method on fitted models: `dredge_trajectories()`
 
 This function applies the `MuMIn::dredge()` function to each model trajectory.
 For each trajectory (constant, linear, quadratic, factor, thresholds), the function
@@ -174,7 +174,7 @@ dredge_trajectories(
 Returns a `dredge.results` object containing `model.selection` tables (either complete, 
 subset below `delta_criterion` or best model).
 
-##### 5) Best trajectory selection: `best_trajectory`
+#### 5) Best trajectory selection: `best_trajectory`
 
 Based on dredge results, the function selects the final retained trajectory by comparing 
 the retained models for each trajectory according to their number of parameters 
@@ -205,7 +205,7 @@ summary(x, type = c("global", "by_trajectory"))
 Returns a `best.trajectory` object containing recap and summary information of 
 selected trajectory.
 
-##### Wrapper function: `select_trajectory()`
+#### Wrapper function: `select_trajectory()`
 
 This function is a wrapper allowing to run in one command the whole pipeline 
 described above. 
@@ -237,7 +237,7 @@ print(x, type = c("global", "by_trajectory"))
 summary(x, type = c("global", "by_trajectory"))
 ```
 
-### Phylogenetic model selection
+### II. Phylogenetic model selection
 The package contains the `dredge_pglmm` function:
 
 Define your random effects (`formulaRE`), fixed effects (`fixed`), data, 
@@ -461,7 +461,7 @@ To cite the `selectools` package in your publications, please use:
 **selectools v0.3.0**
 
 > Lalande LD (2026). _selectools: A facilitating model selection procedure_. 
-R package version 0.3.0. *waiting for latest version doi*.
+R package version 0.3.0. [10.5281/zenodo.20378446](https://doi.org/10.5281/zenodo.20378446).
   
 **For the canonical citation of the software project, use the concept DOI:**
 > <https://doi.org/10.5281/zenodo.18289845>
