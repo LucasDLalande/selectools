@@ -1,7 +1,7 @@
 Package: selectools
 Type: Package
 Title: A facilitating model selection procedure
-Version: 0.2.1
+Version: 0.3.0
 Authors@R: person(
       c("Lucas", "D."), "Lalande",
       email = "lalande.luke@gmail.com",
@@ -10,32 +10,35 @@ Authors@R: person(
     )
 Description: The goal of 'selectools' is to provide and facilitate model selection procedures, 
     mostly based on AIC and AICc, and adapting the 'dredge' function from the 'MuMIn' 
-    package. 'selectools' contains a unique (for now) function ('pglmm_dredge') that can 
-    be used to perform model selection of phylogenetic generalized linear mixed 
-    models ('pglmm' from the 'phyr' package). It generates a model selection table 
-    of models as would do the 'dredge' function from 'MuMIn' with combinations 
-    (subsets) of fixed effect terms in the global model, with optional model 
-    inclusion rules.
-    Future development include functions designed for the model selection when 
-    testing different trajectories as can be done in senescence research, by 
-    automatically computing, testing, comparing and ranking constant, linear, 
-    quadratic or threshold trajectories. 
+    package. 'selectools' contains a set of function to perform trajectory analyses.
+    It is designed for model selection from A to Z when testing different 
+    trajectories as can be done in senescence research, by automatically computing, fitting, 
+    testing, comparing and ranking constant, linear, quadratic, factor and threshold trajectories. 
+    The package also includes a function ('pglmm_dredge') to perform model 
+    selection of phylogenetic generalized linear mixed models ('pglmm' from the 'phyr' package). 
+    It generates a model selection table of models as would do the 'dredge' function 
+    from 'MuMIn' with combinations (subsets) of fixed effect terms in the global model, 
+    with optional model inclusion rules.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 URL: https://github.com/LucasDLalande/selectools
 BugReports: https://github.com/LucasDLalande/selectools/issues
 Imports: 
+    graphics,
     lme4,
+    MuMIn,
     phyr,
+    reformulas,
     stats,
-    utils
+    utils,
+    withr
 Suggests: 
     ape,
     phylobase,
     phytools,
     testthat (>= 3.0.0)
-RoxygenNote: 7.3.3
 Depends: 
     R (>= 3.5)
 Config/testthat/edition: 3
+Config/roxygen2/version: 8.0.0

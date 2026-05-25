@@ -1,15 +1,15 @@
-citHeader("To cite selectools in publications, please use:")
+citHeader("To cite the selectools package in your publications, please use:")
 bibentry(
-  bibtype  = "Manual",
-  title    = "selectools: A facilitating model selection procedure",
-  author   = person(
-      c("Lucas", "D."), "Lalande",
-      email = "lalande.luke@gmail.com",
-      role = c("aut", "cre"),
-      comment = c("0000-0001-9319-8033")
-    ),
-  year     = 2026,
-  note     = "R package version 0.2.1",
-  doi      = "https://doi.org/10.5281/zenodo.18289846",
-  url      = "https://github.com/LucasDLalande/selectools.git"
+  bibtype = "Manual",
+  title = "selectools: A facilitating model selection procedure",
+  author = person(
+    c("Lucas", "D."), "Lalande",
+    email = "lalande.luke@gmail.com",
+    role = c("aut", "cre"),
+    comment = c("0000-0001-9319-8033")
+  ),
+  year = "2026",
+  note = "R package version 0.3.0",
+  doi = "10.5281/zenodo.18289845",
+  url = "https://github.com/LucasDLalande/selectools"
 )

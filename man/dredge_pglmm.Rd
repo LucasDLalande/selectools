@@ -17,47 +17,65 @@ dredge_pglmm(
 )
 }
 \arguments{
-\item{formulaRE}{A character string specifying the random effects structure (e.g., "~ 1 + (1 | Species)"). Must include an intercept (`1`) as fixed effect.}
+\item{formulaRE}{A \code{formula} object specifying the random effects structure
+(e.g., \code{log_onset ~ 1 + (1 | Species)}). Must include an intercept (\code{1}) as fixed effect.}
 
-\item{fixed}{A character vector of fixed-effect names to test. Interaction terms are allowed (e.g., "Sepal.Width:Petal.Length"), but some post-processing of tested models might be required.}
+\item{fixed}{A character vector of fixed effects to test.
+Interaction terms are allowed (e.g., \code{"Sepal.Width:Petal.Length"}),
+but some post-processing of tested models might be required.}
 
-\item{data}{A data.frame containing the variables named in formula.}
+\item{data}{A \code{data.frame} containing the variables named in \code{formula}.}
 
-\item{rank}{Criterion used to rank the models. Choose either "AIC" (default) or "AICc".}
+\item{rank}{Criterion used to rank the models. Choose either \code{"AIC"} (default) or \code{"AICc"}.}
 
-\item{family}{Distribution family to use in model fitting. Options are "gaussian", "binomial", or "poisson".}
+\item{family}{Distribution family to use in model fitting. Options are \code{"gaussian"},
+\code{"binomial"}, or \code{"poisson"}.}
 
-\item{cov_ranef}{A named list of covariance matrices of random terms. The names should be the group variables that are used as random terms with specified covariance matrices (without the two underscores, e.g. list(sp = tree1, site = tree2)). The actual object can be either a phylogeny with class "phylo" or a prepared covariance matrix. If it is a phylogeny, pglmm will prune it and then convert it to a covariance matrix assuming Brownian motion evolution. pglmm will also standardize all covariance matrices to have determinant of one. Group variables will be converted to factors and all covariance matrices will be rearranged so that rows and columns are in the same order as the levels of their corresponding group variables.}
+\item{cov_ranef}{A named list of covariance matrices of random terms. The names
+should be the group variables that are used as random terms with specified covariance
+matrices (without the two underscores, e.g. \code{list(sp = tree1, site = tree2)}).
+The actual object can be either a phylogeny with class \code{phylo} or a prepared
+covariance matrix. If it is a phylogeny, \code{\link[phyr]{pglmm}} will prune it and then convert
+it to a covariance matrix assuming Brownian motion evolution. \code{\link[phyr]{pglmm}}
+will also standardize all covariance matrices to have determinant of one.
+Group variables will be converted to factors and all covariance matrices will
+be rearranged so that rows and columns are in the same order as the levels of
+their corresponding group variables.}
 
-\item{estimate}{Logical. If `TRUE` (default), includes fixed effect estimates in the output.}
+\item{estimate}{Logical. If \code{TRUE} (default), includes fixed effect estimates
+in the output.}
 
-\item{std.err}{Logical. If `TRUE`, includes standard errors for the fixed effects. Default to `FALSE`.}
+\item{std.err}{Logical. If \code{TRUE}, includes standard errors for the fixed effects.
+Defaults to \code{FALSE}.}
 
-\item{round}{Integer. Number of decimal places to round numeric results to. Default to `3`.}
+\item{round}{Integer. Number of decimal places to round numeric results to. Defaults to \code{3}.}
 }
 \value{
-A data frame summarizing model selection results, ranked by the chosen criterion.
+A \code{dredge.table} object containing:
+\describe{
+   \item{dredge_table}{A \code{data.frame} object with ranked models according to AICc and AIC.}
+   \item{full_model_chr}{A \code{character} string displaying the formula of the full model.}
+   \item{random_display}{A \code{character} string of random terms.}
+   \item{rank_name}{A \code{character} string specifying the name of the rank criterion chosen.}
+   \item{data_name}{A \code{character} string specifying the name of the \code{data}.}
+   \item{cov_ranef_name}{A \code{character} string specifying the name of the covariance matrix of random terms.}
+   \item{family_name}{A \code{character} string specifying the name of the
+   family used in \code{pglmm} (\code{"gaussian"}, \code{"binomial"}, or \code{"poisson"}).}
+   }
 }
 \description{
-This is an adaptation of the \code{dredge} function from the \code{MuMIn} package to
-phylogenetic generalized linear mixed models (\code{pglmm} from the \code{phyr}). It
-generates a model selection table of models as would do the \code{dredge}
-function from \code{MuMIn} with combinations (subsets) of fixed effect terms in
-the global model, with optional model inclusion rules.
+This is an adaptation of \code{\link[MuMIn]{dredge}} to phylogenetic generalized
+linear mixed models (\code{\link[phyr]{pglmm}}). It generates a model
+selection table of models as would do \code{\link[MuMIn]{dredge}} with combinations
+(subsets) of fixed effect terms in the global model, with optional model inclusion rules.
 }
 \examples{
-# Write the null model using pglmm() from 'phyr'
-mod1 <- phyr::pglmm(log_onset ~ 1 + (1|Species__),
-                  data = senescence, family = "gaussian", cov_ranef = list(Species = tree_ultra),
-                  REML = TRUE, verbose = FALSE, s2.init = .1)
-
 # Run model selection based
-dredge_pglmm(
-       formulaRE = "log_onset ~ 1 + (1 | Species)",
-       fixed = c("log_afr", "log_mass"),
-       data = senescence,
-       rank = "AICc",
-       family = "gaussian",
-       cov_ranef = list(Species = tree_ultra)
- )
+res <- dredge_pglmm(formulaRE = log_onset ~ 1 + (1 | Species),
+                    fixed = c("log_afr", "log_mass"),
+                    data = senescence,
+                    rank = "AICc",
+                    family = "gaussian",
+                    cov_ranef = list(Species = tree_ultra))
+res
 }
