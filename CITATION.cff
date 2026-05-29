@@ -9,4 +9,10 @@ version: 0.3.0
 identifiers:
   - type: doi
     value: 10.5281/zenodo.20378446
+    description: "version 0.3.0"
+  - type: doi
+    value: 10.5281/zenodo.18289845
+    description: "All versions"
+repository-code: https://github.com/LucasDLalande/selectools
 date-released: 2026-05-25
+license: MIT
